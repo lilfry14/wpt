@@ -715,7 +715,7 @@ class WdspecRun:
         except (socket.timeout, OSError):
             self.result = False, ("CRASH", None)
         except Exception as e:
-            message = getattr(e, "message")
+            message = str(e)
             if message:
                 message += "\n"
             message += traceback.format_exc()
